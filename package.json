@@ -1,0 +1,13 @@
+{
+  "name": "@lightning-components/google-maps",
+  "version": "0.1.0",
+  "description": "Improves page-speed loading performance for Google Maps.",
+  "main": "lightning-google-maps.js",
+  "keywords": [
+    "google maps",
+    "lazy-load"
+  ],
+  "author": "Justin Fortunato <developer@jfortunato.com>",
+  "license": "MIT",
+  "dependencies": {}
+}
