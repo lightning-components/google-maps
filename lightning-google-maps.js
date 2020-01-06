@@ -35,6 +35,7 @@
         connectedCallback() {
             // https://developers.google.com/web/fundamentals/web-components/best-practices#lazy-properties
             this.upgradeProperty('src');
+            this.upgradeProperty('disableNativeLazyloading');
 
             // store a reference to the actual iframe that will eventually be loaded
             this.iframe = this.getIframeElementToBeInserted();
@@ -72,7 +73,7 @@
         }
 
         supportsNativeLazyLoading() {
-            return 'loading' in HTMLImageElement.prototype;
+            return !this.disableNativeLazyloading && 'loading' in HTMLImageElement.prototype;
         }
 
         setupObserver() {
@@ -122,6 +123,20 @@
 
         get src() {
             return this.getAttribute('src');
+        }
+
+        set disableNativeLazyloading(value) {
+            if (!value) {
+                this.removeAttribute('disable-native-lazyloading');
+
+                return;
+            }
+
+            this.setAttribute('disable-native-lazyloading', value);
+        }
+
+        get disableNativeLazyloading() {
+            return this.hasAttribute('disable-native-lazyloading') && this.getAttribute('disable-native-lazyloading') !== 'false';
         }
     }
 

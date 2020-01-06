@@ -1,6 +1,6 @@
 {
   "name": "@lightning-components/google-maps",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Improves page-speed loading performance for Google Maps.",
   "main": "lightning-google-maps.js",
   "keywords": [
